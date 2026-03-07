@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>المنتجات - Femina Glow</title>
+  
+  <meta name="description" content="تصفحي تشكيلتنا الواسعة من منتجات العناية الطبيعية بالبشرة والجسم">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/style.css">
+  
+  <style>
+    /* Products Page Specific Styles */
+    .products-page {
+      padding-top: 100px;
+      min-height: 100vh;
+    }
+    
+    .products-layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 40px;
+    }
+    
+    /* Sidebar Filters */
+    .filters-sidebar {
+      background: var(--background);
+      border-radius: var(--radius);
+      padding: 25px;
+      border: 1px solid var(--border);
+      height: fit-content;
+      position: sticky;
+      top: 100px;
+    }
+    
+    .dark-mode .filters-sidebar {
+      background: var(--background-alt);
+    }
+    
+    .filter-section {
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .filter-section:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+    
+    .filter-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .filter-options {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .filter-option {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      padding: 8px;
+      border-radius: var(--radius-sm);
+      transition: var(--transition);
+    }
+    
+    .filter-option:hover {
+      background: var(--background-alt);
+    }
+    
+    .dark-mode .filter-option:hover {
+      background: var(--background);
+    }
+    
+    .filter-option input[type="checkbox"],
+    .filter-option input[type="radio"] {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--primary);
+    }
+    
+    .filter-option label {
+      cursor: pointer;
+      flex: 1;
+    }
+    
+    .filter-count {
+      color: var(--text-light);
+      font-size: 0.85rem;
+    }
+    
+    /* Products Header */
+    .products-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    
+    .products-count {
+      color: var(--text-secondary);
+    }
+    
+    .products-count span {
+      color: var(--primary);
+      font-weight: 700;
+    }
+    
+    .sort-select {
+      padding: 10px 20px;
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      background: var(--background);
+      color: var(--text-primary);
+      font-family: inherit;
+      cursor: pointer;
+      outline: none;
+    }
+    
+    .dark-mode .sort-select {
+      background: var(--background-alt);
+    }
+    
+    /* Mobile Filter Toggle */
+    .mobile-filter-toggle {
+      display: none;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      background: var(--primary);
+      color: white;
+      border-radius: 50px;
+      font-weight: 600;
+    }
+    
+    /* Mobile Filters Overlay */
+    .mobile-filters-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1500;
+    }
+    
+    .mobile-filters-overlay.active {
+      display: block;
+    }
+    
+    .mobile-filters-sidebar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--background);
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+      padding: 25px;
+      max-height: 80vh;
+      overflow-y: auto;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+      z-index: 1501;
+    }
+    
+    .mobile-filters-overlay.active .mobile-filters-sidebar {
+      transform: translateY(0);
+    }
+    
+    .mobile-filters-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    
+    .mobile-filters-close {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--background-alt);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    /* Clear Filters */
+    .clear-filters {
+      width: 100%;
+      padding: 12px;
+      margin-top: 20px;
+      background: transparent;
+      border: 1px solid var(--error);
+      color: var(--error);
+      border-radius: 50px;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+    
+    .clear-filters:hover {
+      background: var(--error);
+      color: white;
+    }
+    
+    /* Active Filters */
+    .active-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    
+    .active-filter {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 15px;
+      background: var(--primary-light);
+      color: white;
+      border-radius: 50px;
+      font-size: 0.9rem;
+    }
+    
+    .active-filter button {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+    }
+    
+    /* Pagination */
+    .pagination {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 50px;
+    }
+    
+    .pagination-btn {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: var(--background);
+      border: 1px solid var(--border);
+      color: var(--text-primary);
+      font-weight: 600;
+      transition: var(--transition);
+    }
+    
+    .dark-mode .pagination-btn {
+      background: var(--background-alt);
+    }
+    
+    .pagination-btn:hover,
+    .pagination-btn.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+    
+    .pagination-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .products-layout {
+        grid-template-columns: 1fr;
+      }
+      
+      .filters-sidebar {
+        display: none;
+      }
+      
+      .mobile-filter-toggle {
+        display: flex;
+      }
+    }
+    
+    @media (min-width: 1025px) {
+      .mobile-filters-overlay {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <div class="logo-icon">✨</div>
+          <span class="logo-text">Femina <span>Glow</span></span>
+        </a>
+        
+        <nav class="nav-menu" id="navMenu">
+          <a href="index.html" class="nav-link">الرئيسية</a>
+          <a href="products.html" class="nav-link active">المنتجات</a>
+          <a href="about.html" class="nav-link">من نحن</a>
+          <a href="contact.html" class="nav-link">اتصل بنا</a>
+        </nav>
+        
+        <div class="header-actions">
+          <button class="icon-btn" onclick="openSearch()" aria-label="بحث">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg>
+          </button>
+          <button class="icon-btn" onclick="toggleDarkMode()" aria-label="تبديل الوضع الداكن">
+            <span id="darkModeIcon">🌙</span>
+          </button>
+          <button class="icon-btn" onclick="openCart()" aria-label="السلة">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+            <span class="cart-counter" id="cartCounter" style="display: none;">0</span>
+          </button>
+          <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()" aria-label="القائمة">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Products Page -->
+  <main class="products-page">
+    <div class="container">
+      <!-- Page Header -->
+      <div class="section-header" style="margin-bottom: 40px;">
+        <span class="section-subtitle">
+          <span>🛍️</span>
+          <span>متجرنا</span>
+        </span>
+        <h1 class="section-title">جميع المنتجات</h1>
+        <p class="section-description">تصفحي تشكيلتنا الواسعة من منتجات العناية الطبيعية</p>
+      </div>
+      
+      <div class="products-layout">
+        <!-- Desktop Sidebar Filters -->
+        <aside class="filters-sidebar">
+          <div class="filter-section">
+            <h3 class="filter-title">📂 الفئات</h3>
+            <div class="filter-options" id="categoryFilters">
+              <!-- Rendered by JS -->
+            </div>
+          </div>
+          
+          <div class="filter-section">
+            <h3 class="filter-title">💰 نطاق السعر</h3>
+            <div class="filter-options" id="priceFilters">
+              <label class="filter-option">
+                <input type="radio" name="price" value="all" checked onchange="applyFilters()">
+                <span>الكل</span>
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="price" value="0-500" onchange="applyFilters()">
+                <span>أقل من 500 MUR</span>
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="price" value="500-1000" onchange="applyFilters()">
+                <span>500 - 1000 MUR</span>
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="price" value="1000-2000" onchange="applyFilters()">
+                <span>1000 - 2000 MUR</span>
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="price" value="2000+" onchange="applyFilters()">
+                <span>أكثر من 2000 MUR</span>
+              </label>
+            </div>
+          </div>
+          
+          <div class="filter-section">
+            <h3 class="filter-title">✨ نوع البشرة</h3>
+            <div class="filter-options" id="skinTypeFilters">
+              <label class="filter-option">
+                <input type="checkbox" value="all" checked onchange="applyFilters()">
+                <span>جميع الأنواع</span>
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" value="dry" onchange="applyFilters()">
+                <span>جافة</span>
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" value="oily" onchange="applyFilters()">
+                <span>دهنية</span>
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" value="combination" onchange="applyFilters()">
+                <span>مختلطة</span>
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" value="sensitive" onchange="applyFilters()">
+                <span>حساسة</span>
+              </label>
+            </div>
+          </div>
+          
+          <button class="clear-filters" onclick="clearFilters()">مسح الفلاتر</button>
+        </aside>
+        
+        <!-- Products Grid -->
+        <div class="products-content">
+          <div class="products-header">
+            <button class="mobile-filter-toggle" onclick="openMobileFilters()">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg>
+              <span>فلترة</span>
+            </button>
+            <p class="products-count">عرض <span id="productsCount">0</span> منتج</p>
+            <select class="sort-select" id="sortSelect" onchange="applyFilters()">
+              <option value="newest">الأحدث</option>
+              <option value="price-low">السعر: من الأقل للأعلى</option>
+              <option value="price-high">السعر: من الأعلى للأقل</option>
+              <option value="best-seller">الأكثر مبيعاً</option>
+              <option value="rating">الأعلى تقييماً</option>
+            </select>
+          </div>
+          
+          <div class="active-filters" id="activeFilters"></div>
+          
+          <div class="products-grid" id="productsGrid">
+            <!-- Products rendered by JS -->
+          </div>
+          
+          <!-- Pagination -->
+          <div class="pagination" id="pagination">
+            <button class="pagination-btn" onclick="changePage(-1)" id="prevBtn">←</button>
+            <button class="pagination-btn active">1</button>
+            <button class="pagination-btn" onclick="changePage(1)" id="nextBtn">→</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Mobile Filters Overlay -->
+  <div class="mobile-filters-overlay" id="mobileFiltersOverlay" onclick="closeMobileFilters()">
+    <div class="mobile-filters-sidebar" onclick="event.stopPropagation()">
+      <div class="mobile-filters-header">
+        <h3>فلترة المنتجات</h3>
+        <button class="mobile-filters-close" onclick="closeMobileFilters()">✕</button>
+      </div>
+      <div id="mobileFiltersContent">
+        <!-- Cloned from desktop filters -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <div class="logo-icon">✨</div>
+            <span class="logo-text">Femina <span>Glow</span></span>
+          </a>
+          <p>متجر متخصص في منتجات العناية الطبيعية بالبشرة والجسم.</p>
+          <div class="footer-social">
+            <a href="#">📷</a>
+            <a href="#">📘</a>
+            <a href="#">🎵</a>
+            <a href="https://wa.me/22243087944">💬</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4 class="footer-title">روابط سريعة</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="products.html">المنتجات</a></li>
+            <li><a href="about.html">من نحن</a></li>
+            <li><a href="contact.html">اتصل بنا</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4 class="footer-title">الأقسام</h4>
+          <ul class="footer-links">
+            <li><a href="products.html?category=skincare">العناية بالبشرة</a></li>
+            <li><a href="products.html?category=bodycare">العناية بالجسم</a></li>
+            <li><a href="products.html?category=perfumes">العطور الطبيعية</a></li>
+            <li><a href="products.html?category=bundles">الباقات الجاهزة</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4 class="footer-title">تواصل معنا</h4>
+          <ul class="footer-contact">
+            <li>📱 <a href="https://wa.me/22243087944">22243087944</a></li>
+            <li>📧 info@feminaglow.com</li>
+            <li>📍 نواكشوط، موريتانيا</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Femina Glow. جميع الحقوق محفوظة.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3>🛒 سلة المشتريات</h3>
+      <button class="close-cart" onclick="closeCart()">×</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>المجموع:</span>
+        <span class="cart-total-value" id="cartTotal">0 MUR</span>
+      </div>
+      <button class="checkout-btn" onclick="sendOrderToWhatsApp()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span>إتمام الطلب عبر واتساب</span>
+      </button>
+      <button class="clear-cart" onclick="cartManager.clearCart()">إفراغ السلة</button>
+    </div>
+  </div>
+
+  <!-- Search Modal -->
+  <div class="search-overlay" id="searchOverlay" onclick="closeSearch()">
+    <div class="search-container" onclick="event.stopPropagation()">
+      <div class="search-input-wrapper">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg>
+        <input type="text" id="searchInput" placeholder="ابحثي عن منتج..." autocomplete="off">
+        <button onclick="closeSearch()">✕</button>
+      </div>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <div class="toast-container"></div>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Filter state
+    let currentFilters = {
+      category: 'all',
+      priceRange: 'all',
+      skinTypes: [],
+      sortBy: 'newest'
+    };
+    
+    let currentPage = 1;
+    const productsPerPage = 9;
+    
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+      renderCategoryFilters();
+      parseUrlParams();
+      applyFilters();
+      
+      // Clone filters to mobile
+      const mobileContent = document.getElementById('mobileFiltersContent');
+      const desktopFilters = document.querySelector('.filters-sidebar').cloneNode(true);
+      mobileContent.appendChild(desktopFilters);
+    });
+    
+    // Parse URL parameters
+    function parseUrlParams() {
+      const params = new URLSearchParams(window.location.search);
+      const category = params.get('category');
+      if (category) {
+        currentFilters.category = category;
+        document.querySelectorAll('input[name="category"]').forEach(input => {
+          input.checked = input.value === category;
+        });
+      }
+    }
+    
+    // Render category filters
+    function renderCategoryFilters() {
+      const container = document.getElementById('categoryFilters');
+      container.innerHTML = `
+        <label class="filter-option">
+          <input type="radio" name="category" value="all" checked onchange="updateCategory('all')">
+          <span>الكل</span>
+          <span class="filter-count">${products.length}</span>
+        </label>
+        ${categories.map(cat => `
+          <label class="filter-option">
+            <input type="radio" name="category" value="${cat.id}" onchange="updateCategory('${cat.id}')">
+            <span>${cat.name}</span>
+            <span class="filter-count">${products.filter(p => p.category === cat.id).length}</span>
+          </label>
+        `).join('')}
+      `;
+    }
+    
+    // Update category
+    function updateCategory(category) {
+      currentFilters.category = category;
+      applyFilters();
+    }
+    
+    // Apply all filters
+    function applyFilters() {
+      // Get price range
+      const priceRadio = document.querySelector('input[name="price"]:checked');
+      currentFilters.priceRange = priceRadio ? priceRadio.value : 'all';
+      
+      // Get skin types
+      const skinCheckboxes = document.querySelectorAll('#skinTypeFilters input:checked, #mobileFiltersContent input:checked');
+      currentFilters.skinTypes = Array.from(skinCheckboxes).map(cb => cb.value);
+      
+      // Get sort
+      currentFilters.sortBy = document.getElementById('sortSelect').value;
+      
+      // Filter products
+      let filtered = products.filter(product => {
+        // Category filter
+        if (currentFilters.category !== 'all' && product.category !== currentFilters.category) {
+          return false;
+        }
+        
+        // Price filter
+        if (currentFilters.priceRange !== 'all') {
+          const [min, max] = currentFilters.priceRange.split('-').map(v => v === '2000+' ? 2000 : parseInt(v));
+          if (currentFilters.priceRange === '2000+') {
+            if (product.price < 2000) return false;
+          } else {
+            if (product.price < min || product.price > max) return false;
+          }
+        }
+        
+        // Skin type filter
+        if (currentFilters.skinTypes.length > 0 && !currentFilters.skinTypes.includes('all')) {
+          const hasSkinType = product.skinType.some(st => currentFilters.skinTypes.includes(st));
+          if (!hasSkinType) return false;
+        }
+        
+        return true;
+      });
+      
+      // Sort
+      switch (currentFilters.sortBy) {
+        case 'price-low':
+          filtered.sort((a, b) => a.price - b.price);
+          break;
+        case 'price-high':
+          filtered.sort((a, b) => b.price - a.price);
+          break;
+        case 'best-seller':
+          filtered.sort((a, b) => (b.badge === 'best-seller' ? 1 : 0) - (a.badge === 'best-seller' ? 1 : 0));
+          break;
+        case 'rating':
+          filtered.sort((a, b) => b.rating - a.rating);
+          break;
+      }
+      
+      // Update count
+      document.getElementById('productsCount').textContent = filtered.length;
+      
+      // Render products
+      renderFilteredProducts(filtered);
+      
+      // Update active filters display
+      updateActiveFilters();
+    }
+    
+    // Render filtered products
+    function renderFilteredProducts(filtered) {
+      const container = document.getElementById('productsGrid');
+      
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div style="grid-column: 1/-1; text-align: center; padding: 60px 20px;">
+            <div style="font-size: 4rem; margin-bottom: 20px;">🔍</div>
+            <h3>لا توجد منتجات مطابقة</h3>
+            <p>جربي تغيير معايير الفلترة</p>
+          </div>
+        `;
+        return;
+      }
+      
+      container.innerHTML = filtered.map(product => createProductCard(product)).join('');
+    }
+    
+    // Update active filters display
+    function updateActiveFilters() {
+      const container = document.getElementById('activeFilters');
+      const activeFilters = [];
+      
+      if (currentFilters.category !== 'all') {
+        const cat = categories.find(c => c.id === currentFilters.category);
+        activeFilters.push({ type: 'category', label: cat?.name || currentFilters.category });
+      }
+      
+      if (currentFilters.priceRange !== 'all') {
+        const priceLabels = {
+          '0-500': 'أقل من 500 MUR',
+          '500-1000': '500 - 1000 MUR',
+          '1000-2000': '1000 - 2000 MUR',
+          '2000+': 'أكثر من 2000 MUR'
+        };
+        activeFilters.push({ type: 'price', label: priceLabels[currentFilters.priceRange] });
+      }
+      
+      container.innerHTML = activeFilters.map(filter => `
+        <span class="active-filter">
+          ${filter.label}
+          <button onclick="removeFilter('${filter.type}')">✕</button>
+        </span>
+      `).join('');
+    }
+    
+    // Remove filter
+    function removeFilter(type) {
+      if (type === 'category') {
+        currentFilters.category = 'all';
+        document.querySelectorAll('input[name="category"]').forEach(input => {
+          input.checked = input.value === 'all';
+        });
+      } else if (type === 'price') {
+        currentFilters.priceRange = 'all';
+        document.querySelector('input[name="price"][value="all"]').checked = true;
+      }
+      applyFilters();
+    }
+    
+    // Clear all filters
+    function clearFilters() {
+      currentFilters = {
+        category: 'all',
+        priceRange: 'all',
+        skinTypes: [],
+        sortBy: 'newest'
+      };
+      
+      document.querySelectorAll('input[name="category"]').forEach(input => input.checked = input.value === 'all');
+      document.querySelectorAll('input[name="price"]').forEach(input => input.checked = input.value === 'all');
+      document.querySelectorAll('#skinTypeFilters input').forEach(input => input.checked = input.value === 'all');
+      document.getElementById('sortSelect').value = 'newest';
+      
+      applyFilters();
+    }
+    
+    // Mobile filters
+    function openMobileFilters() {
+      document.getElementById('mobileFiltersOverlay').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeMobileFilters() {
+      document.getElementById('mobileFiltersOverlay').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    
+    // Pagination (simplified)
+    function changePage(direction) {
+      // For now, just show toast
+      showToast('جاري تحميل المزيد من المنتجات...');
+    }
+  </script>
+</body>
+</html>

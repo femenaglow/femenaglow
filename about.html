@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>من نحن - Femina Glow</title>
+  
+  <meta name="description" content="تعرفي على Femina Glow - متجر متخصص في منتجات العناية الطبيعية بالبشرة والجسم">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/style.css">
+  
+  <style>
+    /* About Page Styles */
+    .about-page {
+      padding-top: 100px;
+    }
+    
+    .about-hero {
+      background: linear-gradient(135deg, var(--secondary) 0%, var(--background) 100%);
+      padding: 100px 0;
+      text-align: center;
+    }
+    
+    .about-hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+    
+    .about-hero p {
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 1.2rem;
+    }
+    
+    .about-story {
+      padding: 100px 0;
+    }
+    
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    
+    .story-image {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 30px 60px var(--shadow-lg);
+    }
+    
+    .story-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .story-content h2 {
+      margin-bottom: 25px;
+    }
+    
+    .story-content p {
+      margin-bottom: 20px;
+      line-height: 1.8;
+    }
+    
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 60px;
+    }
+    
+    .value-card {
+      text-align: center;
+      padding: 40px 30px;
+      background: var(--background);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      transition: var(--transition);
+    }
+    
+    .dark-mode .value-card {
+      background: var(--background-alt);
+    }
+    
+    .value-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px var(--shadow);
+    }
+    
+    .value-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--primary-light), var(--primary));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 25px;
+      font-size: 2.5rem;
+    }
+    
+    .value-card h3 {
+      margin-bottom: 15px;
+    }
+    
+    .stats-section {
+      background: var(--primary);
+      color: white;
+      padding: 80px 0;
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      text-align: center;
+    }
+    
+    .stat-item-large {
+      padding: 20px;
+    }
+    
+    .stat-number-large {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    
+    .stat-label-large {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+    
+    .team-section {
+      padding: 100px 0;
+      background: var(--background-alt);
+    }
+    
+    .dark-mode .team-section {
+      background: var(--background);
+    }
+    
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+    
+    .team-card {
+      background: var(--background);
+      border-radius: var(--radius);
+      overflow: hidden;
+      text-align: center;
+      transition: var(--transition);
+    }
+    
+    .dark-mode .team-card {
+      background: var(--background-alt);
+    }
+    
+    .team-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px var(--shadow);
+    }
+    
+    .team-image {
+      width: 100%;
+      aspect-ratio: 1;
+      overflow: hidden;
+    }
+    
+    .team-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .team-info {
+      padding: 25px;
+    }
+    
+    .team-info h4 {
+      margin-bottom: 5px;
+    }
+    
+    .team-info p {
+      color: var(--primary);
+      font-weight: 600;
+    }
+    
+    @media (max-width: 1024px) {
+      .story-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .about-hero h1 {
+        font-size: 2rem;
+      }
+      
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .stat-number-large {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <div class="logo-icon">✨</div>
+          <span class="logo-text">Femina <span>Glow</span></span>
+        </a>
+        
+        <nav class="nav-menu" id="navMenu">
+          <a href="index.html" class="nav-link">الرئيسية</a>
+          <a href="products.html" class="nav-link">المنتجات</a>
+          <a href="about.html" class="nav-link active">من نحن</a>
+          <a href="contact.html" class="nav-link">اتصل بنا</a>
+        </nav>
+        
+        <div class="header-actions">
+          <button class="icon-btn" onclick="openSearch()" aria-label="بحث">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg>
+          </button>
+          <button class="icon-btn" onclick="toggleDarkMode()" aria-label="تبديل الوضع الداكن">
+            <span id="darkModeIcon">🌙</span>
+          </button>
+          <button class="icon-btn" onclick="openCart()" aria-label="السلة">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+            <span class="cart-counter" id="cartCounter" style="display: none;">0</span>
+          </button>
+          <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()" aria-label="القائمة">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- About Page -->
+  <main class="about-page">
+    <!-- About Hero -->
+    <section class="about-hero">
+      <div class="container">
+        <span class="section-subtitle" style="justify-content: center; margin-bottom: 20px;">
+          <span>🌿</span>
+          <span>قصتنا</span>
+        </span>
+        <h1>من نحن</h1>
+        <p>نؤمن بأن الجمال الحقيقي يبدأ من الطبيعة. نقدم لكِ منتجات عناية طبيعية 100% لبشرة صحية ومشرقة.</p>
+      </div>
+    </section>
+    
+    <!-- Our Story -->
+    <section class="about-story">
+      <div class="container">
+        <div class="story-grid">
+          <div class="story-image">
+            <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=600&h=600&fit=crop" alt="منتجات طبيعية">
+          </div>
+          <div class="story-content">
+            <span class="section-subtitle">
+              <span>📖</span>
+              <span>قصتنا</span>
+            </span>
+            <h2>رحلة بدأت من حب الطبيعة</h2>
+            <p>
+              تأسست Femina Glow في عام 2024 من شغف عميق بالطبيعة والجمال الطبيعي. بدأنا رحلتنا ببحث مكثف 
+              عن أفضل المكونات الطبيعية التي تُغذي البشرة وتُنعشها دون استخدام أي مواد كيميائية ضارة.
+            </p>
+            <p>
+              نؤمن بأن كل امرأة تستحق أن تشعر بالثقة والجمال. لهذا السبب نعمل بجد لتقديم منتجات 
+              عالية الجودة بأسعار مناسبة للجميع.
+            </p>
+            <p>
+              اليوم، نفخر بخدمة آلاف العملاء الراضين في موريتانيا والمنطقة، ونواصل التزامنا 
+              بتقديم الأفضل دائماً.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Values -->
+        <div class="section-header" style="margin-top: 100px;">
+          <span class="section-subtitle">
+            <span>💎</span>
+            <span>قيمنا</span>
+          </span>
+          <h2 class="section-title">ما نؤمن به</h2>
+        </div>
+        
+        <div class="values-grid">
+          <div class="value-card">
+            <div class="value-icon">🌿</div>
+            <h3>طبيعي 100%</h3>
+            <p>جميع منتجاتنا مصنوعة من مكونات طبيعية وعضوية خالصة</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">🐰</div>
+            <h3>خالي من التجارب</h3>
+            <p>نحن ضد تجربة المنتجات على الحيوانات بشكل قاطع</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">♻️</div>
+            <h3>صديق للبيئة</h3>
+            <p>نستخدم تعبئة صديقة للبيئة ونحافظ على الاستدامة</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">✨</div>
+            <h3>جودة عالية</h3>
+            <p>نختار بعناية كل مكون لضمان أفضل النتائج</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Stats -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item-large">
+            <div class="stat-number-large">+5000</div>
+            <div class="stat-label-large">عميلة سعيدة</div>
+          </div>
+          <div class="stat-item-large">
+            <div class="stat-number-large">+100</div>
+            <div class="stat-label-large">منتج طبيعي</div>
+          </div>
+          <div class="stat-item-large">
+            <div class="stat-number-large">+50</div>
+            <div class="stat-label-large">تقييم 5 نجوم</div>
+          </div>
+          <div class="stat-item-large">
+            <div class="stat-number-large">24/7</div>
+            <div class="stat-label-large">دعم العملاء</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Team -->
+    <section class="team-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">
+            <span>👥</span>
+            <span>فريقنا</span>
+          </span>
+          <h2 class="section-title">من وراء Femina Glow</h2>
+          <p class="section-description">فريق شغوف يعمل لإسعادكِ</p>
+        </div>
+        
+        <div class="team-grid">
+          <div class="team-card">
+            <div class="team-image">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=300&fit=crop" alt="فاطمة">
+            </div>
+            <div class="team-info">
+              <h4>فاطمة</h4>
+              <p>المؤسسة والمديرة</p>
+            </div>
+          </div>
+          <div class="team-card">
+            <div class="team-image">
+              <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&h=300&fit=crop" alt="مريم">
+            </div>
+            <div class="team-info">
+              <h4>مريم</h4>
+              <p>خبيرة العناية بالبشرة</p>
+            </div>
+          </div>
+          <div class="team-card">
+            <div class="team-image">
+              <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop" alt="سارة">
+            </div>
+            <div class="team-info">
+              <h4>سارة</h4>
+              <p>مديرة التسويق</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <div class="logo-icon">✨</div>
+            <span class="logo-text">Femina <span>Glow</span></span>
+          </a>
+          <p>متجر متخصص في منتجات العناية الطبيعية بالبشرة والجسم.</p>
+          <div class="footer-social">
+            <a href="#">📷</a>
+            <a href="#">📘</a>
+            <a href="#">🎵</a>
+            <a href="https://wa.me/22243087944">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M476.9 161.1C435 119.1 379.2 96 319.9 96C197.5 96 97.9 195.6 97.9 318C97.9 357.1 108.1 395.3 127.5 429L96 544L213.7 513.1C246.1 530.8 282.6 540.1 319.8 540.1L319.9 540.1C442.2 540.1 544 440.5 544 318.1C544 258.8 518.8 203.1 476.9 161.1zM319.9 502.7C286.7 502.7 254.2 493.8 225.9 477L219.2 473L149.4 491.3L168 423.2L163.6 416.2C145.1 386.8 135.4 352.9 135.4 318C135.4 216.3 218.2 133.5 320 133.5C369.3 133.5 415.6 152.7 450.4 187.6C485.2 222.5 506.6 268.8 506.5 318.1C506.5 419.9 421.6 502.7 319.9 502.7zM421.1 364.5C415.6 361.7 388.3 348.3 383.2 346.5C378.1 344.6 374.4 343.7 370.7 349.3C367 354.9 356.4 367.3 353.1 371.1C349.9 374.8 346.6 375.3 341.1 372.5C308.5 356.2 287.1 343.4 265.6 306.5C259.9 296.7 271.3 297.4 281.9 276.2C283.7 272.5 282.8 269.3 281.4 266.5C280 263.7 268.9 236.4 264.3 225.3C259.8 214.5 255.2 216 251.8 215.8C248.6 215.6 244.9 215.6 241.2 215.6C237.5 215.6 231.5 217 226.4 222.5C221.3 228.1 207 241.5 207 268.8C207 296.1 226.9 322.5 229.6 326.2C232.4 329.9 268.7 385.9 324.4 410C359.6 425.2 373.4 426.5 391 423.9C401.7 422.3 423.8 410.5 428.4 397.5C433 384.5 433 373.4 431.6 371.1C430.3 368.6 426.6 367.2 421.1 364.5z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4 class="footer-title">روابط سريعة</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="products.html">المنتجات</a></li>
+            <li><a href="about.html">من نحن</a></li>
+            <li><a href="contact.html">اتصل بنا</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4 class="footer-title">الأقسام</h4>
+          <ul class="footer-links">
+            <li><a href="products.html?category=skincare">العناية بالبشرة</a></li>
+            <li><a href="products.html?category=bodycare">العناية بالجسم</a></li>
+            <li><a href="products.html?category=perfumes">العطور الطبيعية</a></li>
+            <li><a href="products.html?category=bundles">الباقات الجاهزة</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4 class="footer-title">تواصل معنا</h4>
+          <ul class="footer-contact">
+            <li>📱 <a href="https://wa.me/22243087944">22243087944</a></li>
+            <li>📧 info@feminaglow.com</li>
+            <li>📍 نواكشوط، موريتانيا</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Femina Glow. جميع الحقوق محفوظة.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3>🛒 سلة المشتريات</h3>
+      <button class="close-cart" onclick="closeCart()">×</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>المجموع:</span>
+        <span class="cart-total-value" id="cartTotal">0 MUR</span>
+      </div>
+      <button class="checkout-btn" onclick="sendOrderToWhatsApp()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span>إتمام الطلب عبر واتساب</span>
+      </button>
+      <button class="clear-cart" onclick="cartManager.clearCart()">إفراغ السلة</button>
+    </div>
+  </div>
+
+  <!-- Search Modal -->
+  <div class="search-overlay" id="searchOverlay" onclick="closeSearch()">
+    <div class="search-container" onclick="event.stopPropagation()">
+      <div class="search-input-wrapper">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg>
+        <input type="text" id="searchInput" placeholder="ابحثي عن منتج..." autocomplete="off">
+        <button onclick="closeSearch()">✕</button>
+      </div>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <div class="toast-container"></div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

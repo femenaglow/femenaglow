@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>سياسة الإرجاع - Femina Glow</title>
+  
+  <meta name="description" content="سياسة الإرجاع والاستبدال لمتجر Femina Glow">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/style.css">
+  
+  <style>
+    .legal-page {
+      padding-top: 100px;
+      min-height: 100vh;
+    }
+    
+    .legal-hero {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: white;
+      padding: 80px 0;
+      text-align: center;
+    }
+    
+    .legal-hero h1 {
+      color: white;
+      font-size: 2.5rem;
+    }
+    
+    .legal-content {
+      padding: 80px 0;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    .legal-section {
+      margin-bottom: 50px;
+    }
+    
+    .legal-section h2 {
+      color: var(--primary);
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+    }
+    
+    .legal-section p {
+      margin-bottom: 15px;
+      line-height: 1.8;
+    }
+    
+    .legal-section ul {
+      list-style: disc;
+      padding-right: 25px;
+      margin-bottom: 20px;
+    }
+    
+    .legal-section li {
+      margin-bottom: 10px;
+      line-height: 1.8;
+    }
+    
+    .process-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin: 30px 0;
+    }
+    
+    .process-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 25px;
+      background: var(--background-alt);
+      border-radius: var(--radius);
+    }
+    
+    .dark-mode .process-step {
+      background: var(--background);
+    }
+    
+    .step-number {
+      width: 50px;
+      height: 50px;
+      background: var(--primary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    
+    .step-content h4 {
+      margin-bottom: 10px;
+    }
+    
+    .step-content p {
+      color: var(--text-secondary);
+      margin: 0;
+    }
+    
+    .highlight-box {
+      background: rgba(34, 197, 94, 0.1);
+      border: 1px solid var(--success);
+      border-radius: var(--radius);
+      padding: 25px;
+      margin: 30px 0;
+    }
+    
+    .highlight-box.warning {
+      background: rgba(245, 158, 11, 0.1);
+      border-color: var(--warning);
+    }
+    
+    .highlight-box h4 {
+      color: var(--success);
+      margin-bottom: 15px;
+    }
+    
+    .highlight-box.warning h4 {
+      color: var(--warning);
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <div class="logo-icon">✨</div>
+          <span class="logo-text">Femina <span>Glow</span></span>
+        </a>
+        
+        <nav class="nav-menu" id="navMenu">
+          <a href="index.html" class="nav-link">الرئيسية</a>
+          <a href="products.html" class="nav-link">المنتجات</a>
+          <a href="about.html" class="nav-link">من نحن</a>
+          <a href="contact.html" class="nav-link">اتصل بنا</a>
+        </nav>
+        
+        <div class="header-actions">
+          <button class="icon-btn" onclick="openSearch()" aria-label="بحث">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg>
+          </button>
+          <button class="icon-btn" onclick="toggleDarkMode()" aria-label="تبديل الوضع الداكن">
+            <span id="darkModeIcon">🌙</span>
+          </button>
+          <button class="icon-btn" onclick="openCart()" aria-label="السلة">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+            <span class="cart-counter" id="cartCounter" style="display: none;">0</span>
+          </button>
+          <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()" aria-label="القائمة">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Legal Page -->
+  <main class="legal-page">
+    <!-- Hero -->
+    <section class="legal-hero">
+      <div class="container">
+        <h1>سياسة الإرجاع والاستبدال</h1>
+      </div>
+    </section>
+    
+    <!-- Content -->
+    <section class="legal-content">
+      <div class="container">
+        <div class="legal-section">
+          <h2>📋 نظرة عامة</h2>
+          <p>في Femina Glow، نسعى لضمان رضاكِ الكامل عن مشترياتكِ. إذا لم تكوني راضية عن منتجكِ لأي سبب، يمكنكِ إرجاعه وفق الشروط التالية.</p>
+        </div>
+        
+        <div class="highlight-box">
+          <h4>✓ ملخص سياسة الإرجاع</h4>
+          <ul>
+            <li>فترة الإرجاع: <strong>7 أيام</strong> من تاريخ الاستلام</li>
+            <li>حالة المنتج: غير مستخدم وفي عبوته الأصلية</li>
+            <li>استرداد المبلغ: خلال <strong>14 يوم عمل</strong></li>
+            <li>تكلفة الإرجاع: على العميل (ما لم يكن المنتج تالفاً)</li>
+          </ul>
+        </div>
+        
+        <div class="legal-section">
+          <h2>✓ شروط الإرجاع المقبولة</h2>
+          <p>يمكن إرجاع المنتجات في الحالات التالية:</p>
+          <ul>
+            <li>المنتج تالف أو معيب عند الاستلام.</li>
+            <li>المنتج غير مطابق للوصف المعروض على الموقع.</li>
+            <li>تم استلام منتج خاطئ (غير المنتج المطلوب).</li>
+            <li>التغيير في الرأي (شريطة أن يكون المنتج غير مستخدم).</li>
+          </ul>
+        </div>
+        
+        <div class="legal-section">
+          <h2>✗ منتجات لا يمكن إرجاعها</h2>
+          <p>لأسباب صحية وسلامة، لا يمكن إرجاع المنتجات التالية:</p>
+          <ul>
+            <li>المنتجات المفتوحة أو المستخدمة.</li>
+            <li>المنتجات التي فُقدت عبوتها الأصلية.</li>
+            <li>المنتجات التي تظهر عليها علامات الاستخدام.</li>
+            <li>المنتجات المتضررة بسبب سوء الاستخدام.</li>
+            <li>الباقات والعروض الخاصة (ما لم تكن تالفة).</li>
+          </ul>
+        </div>
+        
+        <div class="highlight-box warning">
+          <h4>⚠️ ملاحظة مهمة</h4>
+          <p>نوصي بإجراء اختبار حساسية على منطقة صغيرة من الجلد قبل استخدام أي منتج جديد. نحن غير مسؤولين عن أي ردود فعل تحسسية قد تحدث.</p>
+        </div>
+        
+        <div class="legal-section">
+          <h2>🔄 خطوات الإرجاع</h2>
+          <div class="process-steps">
+            <div class="process-step">
+              <div class="step-number">1</div>
+              <div class="step-content">
+                <h4>التواصل معنا</h4>
+                <p>راسلينا على واتساب (43087944) خلال 7 أيام من استلام الطلب مع ذكر رقم الطلب وسبب الإرجاع.</p>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-number">2</div>
+              <div class="step-content">
+                <h4>تأكيد الطلب</h4>
+                <p>سيقوم فريقنا بمراجعة طلب الإرجاع والتواصل معكِ للتأكيد خلال 24-48 ساعة.</p>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-number">3</div>
+              <div class="step-content">
+                <h4>إعادة المنتج</h4>
+                <p>قمي بتغليف المنتج في عبوته الأصلية وإرساله إلى عنواننا (سنزودكِ بالتفاصيل).</p>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-number">4</div>
+              <div class="step-content">
+                <h4>استلام واسترداد</h4>
+                <p>بمجرد استلام المنتج وفحصه، سيتم استرداد المبلغ خلال 14 يوم عمل.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="legal-section">
+          <h2>💰 سياسة الاسترداد</h2>
+          <ul>
+            <li>سيتم استرداد المبلغ بنفس طريقة الدفع الأصلية.</li>
+            <li>للدفع عند الاستلام، سيتم التحويل البنكي أو عبر وسيلة دفع إلكترونية.</li>
+            <li>لا يتم استرداد تكاليف الشحن الأصلية.</li>
+            <li>تكاليف إرجاع المنتج على العميل (ما لم يكن المنتج تالفاً).</li>
+          </ul>
+        </div>
+        
+        <div class="legal-section">
+          <h2>🔄 الاستبدال</h2>
+          <p>يمكن استبدال المنتج بمنتج آخر في الحالات التالية:</p>
+          <ul>
+            <li>المنتج تالف أو معيب.</li>
+            <li>تم استلام منتج خاطئ.</li>
+          </ul>
+          <p>لطلب استبدال، يرجى التواصل معنا على واتساب مع صور للمنتج والعبوة.</p>
+        </div>
+        
+        <div class="legal-section">
+          <h2>📞 التواصل معنا</h2>
+          <p>لأي استفسار حول سياسة الإرجاع، يمكنكِ التواصل معنا:</p>
+          <ul>
+            <li>📱 واتساب: <a href="https://wa.me/22243087944">22243087944</a></li>
+            <li>📧 بريد إلكتروني: info@feminaglow.com</li>
+            <li>🕐 ساعات العمل: السبت - الخميس، 9 صباحاً - 6 مساءً</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <div class="logo-icon">✨</div>
+            <span class="logo-text">Femina <span>Glow</span></span>
+          </a>
+          <p>متجر متخصص في منتجات العناية الطبيعية بالبشرة والجسم.</p>
+          <div class="footer-social">
+            <a href="#">📷</a>
+            <a href="#">📘</a>
+            <a href="#">🎵</a>
+            <a href="https://wa.me/22243087944">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M476.9 161.1C435 119.1 379.2 96 319.9 96C197.5 96 97.9 195.6 97.9 318C97.9 357.1 108.1 395.3 127.5 429L96 544L213.7 513.1C246.1 530.8 282.6 540.1 319.8 540.1L319.9 540.1C442.2 540.1 544 440.5 544 318.1C544 258.8 518.8 203.1 476.9 161.1zM319.9 502.7C286.7 502.7 254.2 493.8 225.9 477L219.2 473L149.4 491.3L168 423.2L163.6 416.2C145.1 386.8 135.4 352.9 135.4 318C135.4 216.3 218.2 133.5 320 133.5C369.3 133.5 415.6 152.7 450.4 187.6C485.2 222.5 506.6 268.8 506.5 318.1C506.5 419.9 421.6 502.7 319.9 502.7zM421.1 364.5C415.6 361.7 388.3 348.3 383.2 346.5C378.1 344.6 374.4 343.7 370.7 349.3C367 354.9 356.4 367.3 353.1 371.1C349.9 374.8 346.6 375.3 341.1 372.5C308.5 356.2 287.1 343.4 265.6 306.5C259.9 296.7 271.3 297.4 281.9 276.2C283.7 272.5 282.8 269.3 281.4 266.5C280 263.7 268.9 236.4 264.3 225.3C259.8 214.5 255.2 216 251.8 215.8C248.6 215.6 244.9 215.6 241.2 215.6C237.5 215.6 231.5 217 226.4 222.5C221.3 228.1 207 241.5 207 268.8C207 296.1 226.9 322.5 229.6 326.2C232.4 329.9 268.7 385.9 324.4 410C359.6 425.2 373.4 426.5 391 423.9C401.7 422.3 423.8 410.5 428.4 397.5C433 384.5 433 373.4 431.6 371.1C430.3 368.6 426.6 367.2 421.1 364.5z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4 class="footer-title">روابط سريعة</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="products.html">المنتجات</a></li>
+            <li><a href="about.html">من نحن</a></li>
+            <li><a href="contact.html">اتصل بنا</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4 class="footer-title">قانوني</h4>
+          <ul class="footer-links">
+            <li><a href="terms.html">شروط الاستخدام</a></li>
+            <li><a href="privacy.html">سياسة الخصوصية</a></li>
+            <li><a href="return-policy.html">سياسة الإرجاع</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4 class="footer-title">تواصل معنا</h4>
+          <ul class="footer-contact">
+            <li>📱 <a href="https://wa.me/22243087944">22243087944</a></li>
+            <li>📧 info@feminaglow.com</li>
+            <li>📍 نواكشوط، موريتانيا</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Femina Glow. جميع الحقوق محفوظة.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3>🛒 سلة المشتريات</h3>
+      <button class="close-cart" onclick="closeCart()">×</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>المجموع:</span>
+        <span class="cart-total-value" id="cartTotal">0 MUR</span>
+      </div>
+      <button class="checkout-btn" onclick="sendOrderToWhatsApp()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span>إتمام الطلب عبر واتساب</span>
+      </button>
+      <button class="clear-cart" onclick="cartManager.clearCart()">إفراغ السلة</button>
+    </div>
+  </div>
+
+  <!-- Search Modal -->
+  <div class="search-overlay" id="searchOverlay" onclick="closeSearch()">
+    <div class="search-container" onclick="event.stopPropagation()">
+      <div class="search-input-wrapper">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg>
+        <input type="text" id="searchInput" placeholder="ابحثي عن منتج..." autocomplete="off">
+        <button onclick="closeSearch()">✕</button>
+      </div>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <div class="toast-container"></div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

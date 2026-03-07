@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Femina Glow - جمال طبيعي يبدأ من الطبيعة</title>
+  
+
+
+  <!-- Meta Tags -->
+  <meta name="description" content="Femina Glow - متجر متخصص في منتجات العناية الطبيعية بالبشرة والجسم في موريتانيا. منتجات عضوية 100% مع توصيل سريع.">
+  <meta name="keywords" content="عناية بالبشرة, منتجات طبيعية, موريتانيا, سيروم, زيوت عضوية, كريمات طبيعية">
+  <meta name="author" content="Femina Glow">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Femina Glow - جمال طبيعي يبدأ من الطبيعة">
+  <meta property="og:description" content="اكتشفي منتجات العناية الطبيعية الفاخرة">
+  <meta property="og:image" content="assets/images/og-image.jpg">
+  <meta property="og:url" content="https://feminaglow.com">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Store",
+    "name": "Femina Glow",
+    "description": "متجر منتجات العناية الطبيعية",
+    "url": "https://feminaglow.com",
+    "telephone": "+22232767270",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "MR"
+    },
+    "priceRange": "$$"
+  }
+  </script>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <img src="assets/images/logo.jpeg" alt="Femina Glow" class="logo-img" style="height: 45px; width: auto; border-radius: 8px;">
+        </a>
+        
+        <nav class="nav-menu" id="navMenu">
+          <a href="index.html" class="nav-link active">
+            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            الرئيسية
+          </a>
+          <a href="products.html" class="nav-link">
+            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7.5 4.27 9 5.15"></path><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path><path d="m3.3 7 8.7 5 8.7-5"></path><path d="M12 22V12"></path></svg>
+            المنتجات
+          </a>
+          <a href="about.html" class="nav-link">
+            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>
+            من نحن
+          </a>
+          <a href="contact.html" class="nav-link">
+            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            اتصل بنا
+          </a>
+        </nav>
+        
+        <div class="header-actions">
+          <button class="icon-btn" onclick="openSearch()" aria-label="بحث">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg>
+          </button>
+          <button class="icon-btn" onclick="toggleDarkMode()" aria-label="تبديل الوضع الداكن">
+            <svg id="darkModeIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
+          </button>
+          <a href="wishlist.html" class="icon-btn" aria-label="المفضلة">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg>
+            <span class="wishlist-counter" id="wishlistCounter" style="display: none;">0</span>
+          </a>
+          <button class="icon-btn" onclick="openCart()" aria-label="السلة">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+            <span class="cart-counter" id="cartCounter" style="display: none;">0</span>
+          </button>
+          <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()" aria-label="القائمة">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span>🌿</span>
+            <span>منتجات طبيعية 100%</span>
+          </div>
+          <h1 class="hero-title">
+            جمال طبيعي<br>
+            <span>يبدأ من الطبيعة</span>
+          </h1>
+          <p class="hero-description">
+            اكتشفي تشكيلتنا الفاخرة من منتجات العناية الطبيعية بالبشرة والجسم. 
+            مصنوعة من مكونات عضوية نقية لبشرة صحية ومشرقة.
+          </p>
+          <div class="hero-buttons">
+            <a href="products.html" class="btn btn-primary">
+              <span>تسوقي الآن</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+            </a>
+            <a href="about.html" class="btn btn-secondary">تعرفي علينا</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="https://i.postimg.cc/KYsWgxNF/AQPxw-Vixmp-Gm-s-Eua-Vf-Za37m0z5Aj7Dx-0b-Aq-KIk-W-FJ6-IN9gh-Fceu5a-Hyv-Ft-Gx-Yui-URCX0EVUhv-Gri08v-K.jpg" alt="منتجات العناية الطبيعية">
+          <div class="hero-stats">
+            <div class="stat-item">
+              <div class="stat-number">+5000</div>
+              <div class="stat-label">عميلة سعيدة</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">+100</div>
+              <div class="stat-label">منتج طبيعي</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">4.9</div>
+              <div class="stat-label">تقييم العملاء</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories Section -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">
+          <span>🧴</span>
+          <span>تصنيفاتنا</span>
+        </span>
+        <h2 class="section-title">استكشفي أقسامنا</h2>
+        <p class="section-description">أقسام متنوعة من المنتجات الطبيعية لجميع احتياجات بشرتك</p>
+      </div>
+      <div class="categories-grid" id="categoriesGrid">
+        <!-- Categories will be rendered by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Best Sellers Section -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">
+          <span>⭐</span>
+          <span>الأكثر مبيعاً</span>
+        </span>
+        <h2 class="section-title">منتجاتنا الأكثر طلباً</h2>
+        <p class="section-description">اكتشفي المنتجات التي أحببتها عملائنا</p>
+      </div>
+      <div class="products-grid" id="bestSellersGrid">
+        <!-- Products will be rendered by JS -->
+      </div>
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="products.html" class="btn btn-secondary">عرض جميع المنتجات</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Special Offers Section -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">
+          <span>🔥</span>
+          <span>عروض خاصة</span>
+        </span>
+        <h2 class="section-title">لا تفوتي فرصتك!</h2>
+        <p class="section-description">عروض محدودة الوقت على منتجات مختارة</p>
+      </div>
+      <div class="offers-grid">
+        <div class="offer-card">
+          <div class="offer-label">عرض محدود</div>
+          <h3 class="offer-title">خصم 25% على الباقات</h3>
+          <p class="offer-description">احصلي على خصم 25% على جميع الباقات الجاهزة</p>
+          <div class="countdown" data-end="24"></div>
+          <a href="products.html?category=bundles" class="btn btn-accent">تسوقي الآن</a>
+        </div>
+        <!-- <div class="offer-card accent">
+          <div class="offer-label">المنتج الأكثر مبيعاً</div>
+          <h3 class="offer-title">سيروم فيتامين C</h3>
+          <p class="offer-description">سيروم مركز للتفتيح ومحاربة التجاعيد</p>
+          <div class="offer-price">
+            <span>900 MUR</span>
+            750 MUR
+          </div> -->
+          <!-- <button class="btn" style="background: white; color: var(--text-primary);" onclick="addToCart('fg_001')">أضفي للسلة</button> -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">
+          <span>✨</span>
+          <span>لماذا نحن؟</span>
+        </span>
+        <h2 class="section-title">مميزاتنا</h2>
+        <p class="section-description">نقدم لكِ تجربة تسوق فريدة مع منتجات عالية الجودة</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-item">
+          <div class="feature-icon">🌿</div>
+          <h3 class="feature-title">منتجات طبيعية 100%</h3>
+          <p class="feature-description">جميع منتجاتنا مصنوعة من مكونات طبيعية وعضوية</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🚚</div>
+          <h3 class="feature-title">توصيل سريع</h3>
+          <p class="feature-description">نوصل طلباتك لجميع مدن موريتانيا في أسرع وقت</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">💬</div>
+          <h3 class="feature-title">طلب عبر واتساب</h3>
+          <p class="feature-description">نظام طلب سهل ومباشر عبر الواتساب</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">⭐</div>
+          <h3 class="feature-title">جودة مضمونة</h3>
+          <p class="feature-description">نضمن لكِ جودة جميع منتجاتنا أو استرجاع نقودك</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">
+          <span>💬</span>
+          <span>آراء العملاء</span>
+        </span>
+        <h2 class="section-title">ماذا يقولون عنا؟</h2>
+        <p class="section-description">تجارب حقيقية من عملائنا الراضين</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" alt="سارة" class="testimonial-avatar">
+            <div class="testimonial-info">
+              <h4>سارة محمد</h4>
+              <div class="stars">⭐⭐⭐⭐⭐</div>
+            </div>
+          </div>
+          <p class="testimonial-text">
+            "أحببت سيروم فيتامين C كثيراً! لاحظت فرقاً واضحاً في بشرتي بعد أسبوعين فقط من الاستخدام. أنصح به بشدة!"
+          </p>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop" alt="فاطمة" class="testimonial-avatar">
+            <div class="testimonial-info">
+              <h4>فاطمة أحمد</h4>
+              <div class="stars">⭐⭐⭐⭐⭐</div>
+            </div>
+          </div>
+          <p class="testimonial-text">
+            "خدمة ممتازة وتوصيل سريع. المنتجات طبيعية 100% كما وعدوا. سأكون عميلة دائمة لديكم!"
+          </p>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" alt="مريم" class="testimonial-avatar">
+            <div class="testimonial-info">
+              <h4>مريم عبدالله</h4>
+              <div class="stars">⭐⭐⭐⭐⭐</div>
+            </div>
+          </div>
+          <p class="testimonial-text">
+            "باقة العناية الكاملة رائعة! توفر لي الكثير وتعطي نتائج مذهلة. شكراً Femina Glow!"
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="section" style="background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white;">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 40px;">
+        <span style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.2); padding: 10px 20px; border-radius: 50px; margin-bottom: 20px;">
+          <span>📧</span>
+          <span>نشرتنا البريدية</span>
+        </span>
+        <h2 class="section-title" style="color: white;">اشتركي للحصول على أحدث العروض</h2>
+        <p style="color: rgba(255,255,255,0.9); max-width: 500px; margin: 0 auto;">احصلي على خصم 10% على أول طلب + أحدث الأخبار والعروض الحصرية</p>
+      </div>
+      <form class="newsletter-form" onsubmit="handleNewsletterSubmit(event)" style="max-width: 500px; margin: 0 auto; display: flex; gap: 15px;">
+        <input type="email" placeholder="بريدكِ الإلكتروني" required style="flex: 1; padding: 15px 25px; border: none; border-radius: 50px; font-family: inherit; font-size: 1rem; outline: none;">
+        <button type="submit" class="btn" style="background: white; color: var(--primary); padding: 15px 30px; border-radius: 50px; font-weight: 700;">اشتركي</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <div class="logo-icon">✨</div>
+            <span class="logo-text">Femina <span>Glow</span></span>
+          </a>
+          <p>متجر متخصص في منتجات العناية الطبيعية بالبشرة والجسم. نقدم لكِ منتجات عضوية 100% لبشرة صحية ومشرقة.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram">📷</a>
+            <a href="#" aria-label="Facebook">📘</a>
+            <a href="https://www.tiktok.com/@feminaglow04?is_from_webapp=1&sender_device=pc" aria-label="TikTok">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M544.5 273.9C500.5 274 457.5 260.3 421.7 234.7L421.7 413.4C421.7 446.5 411.6 478.8 392.7 506C373.8 533.2 347.1 554 316.1 565.6C285.1 577.2 251.3 579.1 219.2 570.9C187.1 562.7 158.3 545 136.5 520.1C114.7 495.2 101.2 464.1 97.5 431.2C93.8 398.3 100.4 365.1 116.1 336C131.8 306.9 156.1 283.3 185.7 268.3C215.3 253.3 248.6 247.8 281.4 252.3L281.4 342.2C266.4 337.5 250.3 337.6 235.4 342.6C220.5 347.6 207.5 357.2 198.4 369.9C189.3 382.6 184.4 398 184.5 413.8C184.6 429.6 189.7 444.8 199 457.5C208.3 470.2 221.4 479.6 236.4 484.4C251.4 489.2 267.5 489.2 282.4 484.3C297.3 479.4 310.4 469.9 319.6 457.2C328.8 444.5 333.8 429.1 333.8 413.4L333.8 64L421.8 64C421.7 71.4 422.4 78.9 423.7 86.2C426.8 102.5 433.1 118.1 442.4 131.9C451.7 145.7 463.7 157.5 477.6 166.5C497.5 179.6 520.8 186.6 544.6 186.6L544.6 274z"/></svg>
+            </a>
+            <a href="https://wa.me/22243087944" aria-label="WhatsApp">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M476.9 161.1C435 119.1 379.2 96 319.9 96C197.5 96 97.9 195.6 97.9 318C97.9 357.1 108.1 395.3 127.5 429L96 544L213.7 513.1C246.1 530.8 282.6 540.1 319.8 540.1L319.9 540.1C442.2 540.1 544 440.5 544 318.1C544 258.8 518.8 203.1 476.9 161.1zM319.9 502.7C286.7 502.7 254.2 493.8 225.9 477L219.2 473L149.4 491.3L168 423.2L163.6 416.2C145.1 386.8 135.4 352.9 135.4 318C135.4 216.3 218.2 133.5 320 133.5C369.3 133.5 415.6 152.7 450.4 187.6C485.2 222.5 506.6 268.8 506.5 318.1C506.5 419.9 421.6 502.7 319.9 502.7zM421.1 364.5C415.6 361.7 388.3 348.3 383.2 346.5C378.1 344.6 374.4 343.7 370.7 349.3C367 354.9 356.4 367.3 353.1 371.1C349.9 374.8 346.6 375.3 341.1 372.5C308.5 356.2 287.1 343.4 265.6 306.5C259.9 296.7 271.3 297.4 281.9 276.2C283.7 272.5 282.8 269.3 281.4 266.5C280 263.7 268.9 236.4 264.3 225.3C259.8 214.5 255.2 216 251.8 215.8C248.6 215.6 244.9 215.6 241.2 215.6C237.5 215.6 231.5 217 226.4 222.5C221.3 228.1 207 241.5 207 268.8C207 296.1 226.9 322.5 229.6 326.2C232.4 329.9 268.7 385.9 324.4 410C359.6 425.2 373.4 426.5 391 423.9C401.7 422.3 423.8 410.5 428.4 397.5C433 384.5 433 373.4 431.6 371.1C430.3 368.6 426.6 367.2 421.1 364.5z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4 class="footer-title">روابط سريعة</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="products.html">المنتجات</a></li>
+            <li><a href="about.html">من نحن</a></li>
+            <li><a href="contact.html">اتصل بنا</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4 class="footer-title">الأقسام</h4>
+          <ul class="footer-links">
+            <li><a href="products.html?category=skincare">العناية بالبشرة</a></li>
+            <!-- <li><a href="products.html?category=bodycare">العناية بالجسم</a></li> -->
+            <li><a href="products.html?category=perfumes">العطور الطبيعية</a></li>
+            <li><a href="products.html?category=bundles">البوكسات الجاهزة</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4 class="footer-title">قانوني</h4>
+          <ul class="footer-links">
+            <li><a href="terms.html">شروط الاستخدام</a></li>
+            <li><a href="privacy.html">سياسة الخصوصية</a></li>
+            <li><a href="return-policy.html">سياسة الإرجاع</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4 class="footer-title">تواصل معنا</h4>
+          <ul class="footer-contact">
+            <li>📱 <a href="https://wa.me/22243087944">22243087944</a></li>
+            <li>📧 info@feminaglow.com</li>
+            <li>📍 نواكشوط، موريتانيا</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Femina Glow. جميع الحقوق محفوظة.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3>🛒 سلة المشتريات</h3>
+      <button class="close-cart" onclick="closeCart()">×</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <!-- Cart items will be rendered by JS -->
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>المجموع:</span>
+        <span class="cart-total-value" id="cartTotal">0 MUR</span>
+      </div>
+      <button class="checkout-btn" onclick="sendOrderToWhatsApp()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span>إتمام الطلب عبر واتساب</span>
+      </button>
+      <button class="clear-cart" onclick="cartManager.clearCart()">إفراغ السلة</button>
+    </div>
+  </div>
+
+  <!-- Search Modal -->
+  <div class="search-overlay" id="searchOverlay" onclick="closeSearch()">
+    <div class="search-container" onclick="event.stopPropagation()">
+      <div class="search-input-wrapper">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg>
+        <input type="text" id="searchInput" placeholder="ابحثي عن منتج..." autocomplete="off">
+        <button onclick="closeSearch()">✕</button>
+      </div>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script>
+    // Render categories and best sellers
+    document.addEventListener('DOMContentLoaded', () => {
+      renderCategories('categoriesGrid');
+      renderProducts('bestSellersGrid', p => p.badge === 'best-seller', 4);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تفاصيل المنتج - Femina Glow</title>
+  
+  <meta name="description" content="تفاصيل المنتج - Femina Glow">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/style.css">
+  
+  <style>
+    /* Product Detail Page Styles */
+    .product-detail-page {
+      padding-top: 100px;
+      min-height: 100vh;
+    }
+    
+    .product-detail-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 80px;
+    }
+    
+    /* Product Images */
+    .product-images {
+      position: sticky;
+      top: 100px;
+    }
+    
+    .main-image {
+      width: 100%;
+      aspect-ratio: 1;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--background-alt);
+      margin-bottom: 20px;
+    }
+    
+    .main-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .thumbnail-images {
+      display: flex;
+      gap: 15px;
+    }
+    
+    .thumbnail {
+      width: 80px;
+      height: 80px;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: var(--transition);
+    }
+    
+    .thumbnail:hover,
+    .thumbnail.active {
+      border-color: var(--primary);
+    }
+    
+    .thumbnail img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    /* Product Info */
+    .product-info-detail {
+      padding: 20px 0;
+    }
+    
+    .product-breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+    
+    .product-breadcrumb a:hover {
+      color: var(--primary);
+    }
+    
+    .product-title-detail {
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+    
+    .product-meta {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 25px;
+      flex-wrap: wrap;
+    }
+    
+    .product-rating-detail {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .product-rating-detail .stars {
+      font-size: 1.2rem;
+    }
+    
+    .product-rating-detail span {
+      color: var(--text-secondary);
+    }
+    
+    .product-stock {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: var(--success);
+      font-weight: 600;
+    }
+    
+    .product-stock.out-of-stock {
+      color: var(--error);
+    }
+    
+    .product-price-detail {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 30px;
+      padding: 25px;
+      background: var(--background-alt);
+      border-radius: var(--radius);
+    }
+    
+    .dark-mode .product-price-detail {
+      background: var(--background);
+    }
+    
+    .current-price-detail {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+    
+    .original-price-detail {
+      font-size: 1.5rem;
+      color: var(--text-light);
+      text-decoration: line-through;
+    }
+    
+    .discount-badge {
+      background: var(--error);
+      color: white;
+      padding: 5px 15px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+    
+    .product-description {
+      margin-bottom: 30px;
+      line-height: 1.8;
+    }
+    
+    .product-features {
+      margin-bottom: 30px;
+    }
+    
+    .product-features h4 {
+      margin-bottom: 15px;
+    }
+    
+    .product-features ul {
+      list-style: none;
+    }
+    
+    .product-features li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+      color: var(--text-secondary);
+    }
+    
+    .product-features li::before {
+      content: '✓';
+      width: 24px;
+      height: 24px;
+      background: var(--primary-light);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+    }
+    
+    /* Quantity & Add to Cart */
+    .product-actions {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+    
+    .quantity-selector {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      background: var(--background-alt);
+      border-radius: 50px;
+      padding: 8px;
+    }
+    
+    .dark-mode .quantity-selector {
+      background: var(--background);
+    }
+    
+    .quantity-btn-large {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+      transition: var(--transition);
+    }
+    
+    .dark-mode .quantity-btn-large {
+      background: var(--background-alt);
+    }
+    
+    .quantity-btn-large:hover {
+      background: var(--primary);
+      color: white;
+    }
+    
+    .quantity-value-large {
+      font-size: 1.3rem;
+      font-weight: 700;
+      min-width: 50px;
+      text-align: center;
+    }
+    
+    .add-to-cart-btn {
+      flex: 1;
+      min-width: 200px;
+      padding: 18px 40px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: var(--transition);
+    }
+    
+    .add-to-cart-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(107, 142, 35, 0.3);
+    }
+    
+    .wishlist-btn {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: var(--background-alt);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      transition: var(--transition);
+    }
+    
+    .dark-mode .wishlist-btn {
+      background: var(--background);
+    }
+    
+    .wishlist-btn:hover {
+      background: var(--error);
+      color: white;
+    }
+    
+    /* Product Tabs */
+    .product-tabs {
+      margin-top: 40px;
+    }
+    
+    .tabs-header {
+      display: flex;
+      gap: 30px;
+      border-bottom: 2px solid var(--border);
+      margin-bottom: 30px;
+    }
+    
+    .tab-btn {
+      padding: 15px 0;
+      font-weight: 600;
+      color: var(--text-secondary);
+      position: relative;
+      transition: var(--transition);
+    }
+    
+    .tab-btn:hover,
+    .tab-btn.active {
+      color: var(--primary);
+    }
+    
+    .tab-btn.active::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--primary);
+    }
+    
+    .tab-content {
+      display: none;
+    }
+    
+    .tab-content.active {
+      display: block;
+    }
+    
+    .tab-content h4 {
+      margin-bottom: 15px;
+    }
+    
+    .tab-content p {
+      margin-bottom: 15px;
+      line-height: 1.8;
+    }
+    
+   ؟
+    
+    .ingredient-tag {
+      padding: 10px 20px;
+      background: var(--background-alt);
+      border-radius: 50px;
+      font-size: 0.9rem;
+    }
+    
+    .dark-mode .ingredient-tag {
+      background: var(--background);
+    }
+    
+    /* Related Products */
+    .related-products {
+      padding: 80px 0;
+      background: var(--background-alt);
+    }
+    
+    .dark-mode .related-products {
+      background: var(--background);
+    }
+    
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .product-detail-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      
+      .product-images {
+        position: relative;
+        top: 0;
+      }
+      
+      .product-title-detail {
+        font-size: 1.5rem;
+      }
+      
+      .current-price-detail {
+        font-size: 2rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .product-actions {
+        flex-direction: column;
+      }
+      
+      .add-to-cart-btn {
+        width: 100%;
+      }
+      
+      .tabs-header {
+        gap: 15px;
+        overflow-x: auto;
+      }
+      
+      .tab-btn {
+        white-space: nowrap;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <div class="logo-icon">✨</div>
+          <span class="logo-text">Femina <span>Glow</span></span>
+        </a>
+        
+        <nav class="nav-menu" id="navMenu">
+          <a href="index.html" class="nav-link">الرئيسية</a>
+          <a href="products.html" class="nav-link">المنتجات</a>
+          <a href="about.html" class="nav-link">من نحن</a>
+          <a href="contact.html" class="nav-link">اتصل بنا</a>
+        </nav>
+        
+        <div class="header-actions">
+          <button class="icon-btn" onclick="openSearch()" aria-label="بحث">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg>
+          </button>
+          <button class="icon-btn" onclick="toggleDarkMode()" aria-label="تبديل الوضع الداكن">
+            <span id="darkModeIcon">🌙</span>
+          </button>
+          <button class="icon-btn" onclick="openCart()" aria-label="السلة">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+            <span class="cart-counter" id="cartCounter" style="display: none;">0</span>
+          </button>
+          <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()" aria-label="القائمة">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Product Detail Page -->
+  <main class="product-detail-page">
+    <div class="container">
+      <div class="product-detail-layout" id="productDetail">
+        <!-- Product detail rendered by JS -->
+      </div>
+    </div>
+  </main>
+
+  <!-- Related Products -->
+  <section class="related-products">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">
+          <span>🛍️</span>
+          <span>قد يعجبك أيضاً</span>
+        </span>
+        <h2 class="section-title">منتجات مشابهة</h2>
+      </div>
+      <div class="products-grid" id="relatedProducts">
+        <!-- Related products rendered by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <div class="logo-icon">✨</div>
+            <span class="logo-text">Femina <span>Glow</span></span>
+          </a>
+          <p>متجر متخصص في منتجات العناية الطبيعية بالبشرة والجسم.</p>
+          <div class="footer-social">
+            <a href="#">📷</a>
+            <a href="#">📘</a>
+            <a href="#">🎵</a>
+            <a href="https://wa.me/22243087944">💬</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4 class="footer-title">روابط سريعة</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="products.html">المنتجات</a></li>
+            <li><a href="about.html">من نحن</a></li>
+            <li><a href="contact.html">اتصل بنا</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4 class="footer-title">الأقسام</h4>
+          <ul class="footer-links">
+            <li><a href="products.html?category=skincare">العناية بالبشرة</a></li>
+            <li><a href="products.html?category=bodycare">العناية بالجسم</a></li>
+            <li><a href="products.html?category=perfumes">العطور الطبيعية</a></li>
+            <li><a href="products.html?category=bundles">الباقات الجاهزة</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4 class="footer-title">تواصل معنا</h4>
+          <ul class="footer-contact">
+            <li>📱 <a href="https://wa.me/22243087944">22243087944</a></li>
+            <li>📧 info@feminaglow.com</li>
+            <li>📍 نواكشوط، موريتانيا</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Femina Glow. جميع الحقوق محفوظة.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3>🛒 سلة المشتريات</h3>
+      <button class="close-cart" onclick="closeCart()">×</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>المجموع:</span>
+        <span class="cart-total-value" id="cartTotal">0 MUR</span>
+      </div>
+      <button class="checkout-btn" onclick="sendOrderToWhatsApp()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span>إتمام الطلب عبر واتساب</span>
+      </button>
+      <button class="clear-cart" onclick="cartManager.clearCart()">إفراغ السلة</button>
+    </div>
+  </div>
+
+  <!-- Search Modal -->
+  <div class="search-overlay" id="searchOverlay" onclick="closeSearch()">
+    <div class="search-container" onclick="event.stopPropagation()">
+      <div class="search-input-wrapper">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg>
+        <input type="text" id="searchInput" placeholder="ابحثي عن منتج..." autocomplete="off">
+        <button onclick="closeSearch()">✕</button>
+      </div>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <div class="toast-container"></div>
+
+  <script src="js/main.js"></script>
+  <script>
+    let currentProduct = null;
+    let quantity = 1;
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const productId = urlParams.get('id');
+      
+      if (productId) {
+        currentProduct = products.find(p => p.id === productId);
+      }
+      
+      if (!currentProduct) {
+        currentProduct = products[0]; // Default to first product
+      }
+      
+      renderProductDetail();
+      renderRelatedProducts();
+    });
+    
+    function renderProductDetail() {
+      const container = document.getElementById('productDetail');
+      const discount = currentProduct.originalPrice ? 
+        Math.round((1 - currentProduct.price / currentProduct.originalPrice) * 100) : 0;
+      
+      container.innerHTML = `
+        <!-- Product Images -->
+        <div class="product-images">
+          <div class="main-image">
+            <img src="${currentProduct.image}" alt="${currentProduct.name}" id="mainImage">
+          </div>
+          <div class="thumbnail-images">
+            <div class="thumbnail active" onclick="changeImage('${currentProduct.image}', this)">
+              <img src="${currentProduct.image}" alt="${currentProduct.name}">
+            </div>
+            <div class="thumbnail" onclick="changeImage('${currentProduct.image}', this)">
+              <img src="${currentProduct.image}" alt="${currentProduct.name}">
+            </div>
+            <div class="thumbnail" onclick="changeImage('${currentProduct.image}', this)">
+              <img src="${currentProduct.image}" alt="${currentProduct.name}">
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product Info -->
+        <div class="product-info-detail">
+          <div class="product-breadcrumb">
+            <a href="index.html">الرئيسية</a>
+            <span>/</span>
+            <a href="products.html?category=${currentProduct.category}">${getCategoryName(currentProduct.category)}</a>
+            <span>/</span>
+            <span>${currentProduct.name}</span>
+          </div>
+          
+          <h1 class="product-title-detail">${currentProduct.name}</h1>
+          
+          <div class="product-meta">
+            <div class="product-rating-detail">
+              <span class="stars">${'⭐'.repeat(Math.floor(currentProduct.rating))}</span>
+              <span>(${currentProduct.reviews} تقييم)</span>
+            </div>
+            <div class="product-stock ${currentProduct.inStock ? '' : 'out-of-stock'}">
+              <span>${currentProduct.inStock ? '✓' : '✕'}</span>
+              <span>${currentProduct.inStock ? 'متوفر في المخزن' : 'غير متوفر'}</span>
+            </div>
+          </div>
+          
+          <div class="product-price-detail">
+            <span class="current-price-detail">${currentProduct.price} MUR</span>
+            ${currentProduct.originalPrice ? `
+              <span class="original-price-detail">${currentProduct.originalPrice} MUR</span>
+              <span class="discount-badge">خصم ${discount}%</span>
+            ` : ''}
+          </div>
+          
+          <p class="product-description">${currentProduct.description}</p>
+          
+          <div class="product-features">
+            <h4>مميزات المنتج:</h4>
+            <ul>
+              <li>منتج طبيعي 100%</li>
+              <li>مناسب لجميع أنواع البشرة</li>
+              <li>خالي من المواد الكيميائية الضارة</li>
+              <li>غير مجرب على الحيوانات</li>
+            </ul>
+          </div>
+          
+          <div class="product-actions">
+            <div class="quantity-selector">
+              <button class="quantity-btn-large" onclick="updateQuantity(-1)">-</button>
+              <span class="quantity-value-large" id="quantityValue">1</span>
+              <button class="quantity-btn-large" onclick="updateQuantity(1)">+</button>
+            </div>
+            <button class="add-to-cart-btn" onclick="addToCartWithQuantity()">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+              <span>أضفي للسلة</span>
+            </button>
+            <button class="wishlist-btn">♡</button>
+          </div>
+          
+          <!-- Product Tabs -->
+          <div class="product-tabs">
+            <div class="tabs-header">
+              <button class="tab-btn active" onclick="switchTab('description1')">الوصف</button>
+             
+              <button class="tab-btn" onclick="switchTab('usage')">طريقة الاستخدام</button>
+            </div>
+            
+            <div class="tab-content active" id="tab-description">
+              <h4>وصف المنتج</h4>
+              <p>${currentProduct.description}</p>
+              <p></p>
+            </div>
+            
+            
+            
+            <div class="tab-content" id="tab-usage">
+              <h4>طريقة الاستخدام</h4>
+              <p>${currentProduct.usage}</p>
+              <p>للحصول على أفضل النتائج، استخدمي المنتج بانتظام كجزء من روتين العناية اليومي ببشرتك.</p>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+    
+    function changeImage(src, thumbnail) {
+      document.getElementById('mainImage').src = src;
+      document.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
+      thumbnail.classList.add('active');
+    }
+    
+    function updateQuantity(change) {
+      quantity = Math.max(1, quantity + change);
+      document.getElementById('quantityValue').textContent = quantity;
+    }
+    
+    function addToCartWithQuantity() {
+      if (currentProduct) {
+        cartManager.addItem(currentProduct, quantity);
+        quantity = 1;
+        document.getElementById('quantityValue').textContent = quantity;
+      }
+    }
+    
+    function switchTab(tabName) {
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+      
+      event.target.classList.add('active');
+      document.getElementById(`tab-${tabName}`).classList.add('active');
+    }
+    
+    function renderRelatedProducts() {
+      const related = products
+        .filter(p => p.category === currentProduct.category && p.id !== currentProduct.id)
+        .slice(0, 4);
+      
+      const container = document.getElementById('relatedProducts');
+      
+      if (related.length === 0) {
+        container.innerHTML = '<p style="text-align: center; grid-column: 1/-1;">لا توجد منتجات مشابهة</p>';
+        return;
+      }
+      
+      container.innerHTML = related.map(product => createProductCard(product)).join('');
+    }
+  </script>
+</body>
+</html>
