@@ -190,8 +190,9 @@ const products = [
      category: "perfumes",
      subcategory: "oil-perfumes",
      skinType: ["all"],
-     badge:    rating: 4.9,
-     reviews:/   inStock: true,
+     rating: 4.8,
+    reviews: 56,
+    inStock: true,
      image: "https://i.postimg.cc/L5GLKMbP/gemini-3-pro-image-preview-2k-a-You-must-recreate-a-(7).png",
      ingredients: ["Damask Rose Extract", "Jojoba Oil"],
      usage: "يوضع على نقاط النبض"
