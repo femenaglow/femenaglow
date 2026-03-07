@@ -92,23 +92,23 @@ const products = [
     ingredients: ["Aloe Vera", "Shea Butter", "Vitamin E"],
     usage: "تُبلل البشرة بالماء، ثم تُفرك الصابونية باليد أو بليفة الاستحمام حتى تتكون رغوة، تُوزع على الجسم مع تدليك لطيف ثم تُغسل بالماء."
   },
-  // {
-  //   id: "fg_003",
-  //   name: "تقسيمات عطر راقي",
-  //   description: " طبقات عطرية متناسقة تأخذك من الانتعاش الأول إلى عمق الفخامة.",
-  //   price: 1200,
-  //   originalPrice: 1500,
-  //   category: "perfumes",
-  //   subcategory: "oils",
-  //   skinType: ["all", "dry"],
-  //   badge: null,
-  //   rating: 4.8,
-  //   reviews: 156,
-  //   inStock: true,
-  //   image: "https://i.postimg.cc/ydb7v6Dm/gemini-3-pro-image-preview-2k-a-You-must-recreate-a.png",
-  //   ingredients: ["100% Organic Argan Oil"],
-  //   usage: "يستخدم على البشرة الرطبة بعد التنظيف"
-  // },
+  {
+    id: "fg_003",
+    name: "تقسيمات عطر راقي",
+    description: " طبقات عطرية متناسقة تأخذك من الانتعاش الأول إلى عمق الفخامة.",
+    price: 1200,
+    originalPrice: 70,
+    category: "perfumes",
+    subcategory: "oils",
+    skinType: ["all", "dry"],
+    badge: null,
+    rating: 4.8,
+    reviews: 156,
+    inStock: true,
+    image: "https://i.postimg.cc/ydb7v6Dm/gemini-3-pro-image-preview-2k-a-You-must-recreate-a.png",
+    ingredients: ["100% Organic Argan Oil"],
+    usage: "يستخدم على البشرة الرطبة بعد التنظيف"
+  },
   
   {
     id: "fg_005",
