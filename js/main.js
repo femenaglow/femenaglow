@@ -211,7 +211,7 @@ const products = [
     rating: 4.8,
     reviews: 56,
     inStock: true,
-    image: "https://img.sanishtech.com/u/61d96ffec2d829a4574bf953eaaa08b1.jpg",
+    image: "https://i.postimg.cc/FzbfkQBb/Whats-App-Image-2026-03-06-at-12-36-35-AM.jpg",
     ingredients: ["Argan Oil", "Coconut Oil", "Aloe Vera"],
     usage: "اتبعي التعليمات المرفقة"
   },
