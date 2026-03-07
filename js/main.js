@@ -181,23 +181,21 @@ const products = [
   //   ingredients: ["Damask Rose Extract", "Jojoba Oil"],
   //   usage: "يوضع على نقاط النبض"
   // },
-  // {
-  //   id: "fg_01",
-  //   name: "تقسسيمات عطر اجمل احساس",
-  //   description: "عطر  فاخر بخلاصة الورد الدمشقي الطبيعي.",
-  //   price: 950,
-  //   originalPrice: 1100,
-  //   category: "perfumes",
-  //   subcategory: "oil-perfumes",
-  //   skinType: ["all"],
-  //   badge: "sale",
-  //   rating: 4.9,
-  //   reviews: 88,
-  //   inStock: true,
-  //   image: "https://i.postimg.cc/L5GLKMbP/gemini-3-pro-image-preview-2k-a-You-must-recreate-a-(7).png",
-  //   ingredients: ["Damask Rose Extract", "Jojoba Oil"],
-  //   usage: "يوضع على نقاط النبض"
-  // },
+   {
+     id: "fg_01",
+     name: "تقسسيمات عطر اجمل احساس",
+     description: "عطر  فاخر بخلاصة الورد الدمشقي الطبيعي.",
+     price: 950,
+     originalPrice: 1100,
+     category: "perfumes",
+     subcategory: "oil-perfumes",
+     skinType: ["all"],
+     badge:    rating: 4.9,
+     reviews:/   inStock: true,
+     image: "https://i.postimg.cc/L5GLKMbP/gemini-3-pro-image-preview-2k-a-You-must-recreate-a-(7).png",
+     ingredients: ["Damask Rose Extract", "Jojoba Oil"],
+     usage: "يوضع على نقاط النبض"
+   },
   {
     id: "fg_012",
     name: "بوكس العناية بالبشرة",
