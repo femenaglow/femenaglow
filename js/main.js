@@ -166,8 +166,8 @@ const products = [
   
   // {
   //   id: "fg_011",
-  //   name: "عطر الورد الدمشقي",
-  //   description: "عطر زيتي فاخر بخلاصة الورد الدمشقي الطبيعي.",
+  //   name: "",
+  //   description: ".",
   //   price: 950,
   //   originalPrice: 1100,
   //   category: "perfumes",
@@ -177,14 +177,14 @@ const products = [
   //   rating: 4.9,
   //   reviews: 88,
   //   inStock: true,
-  //   image: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=400&h=400&fit=crop",
+  //   image: "https://i.postimg.cc/L5GLKMbP/gemini-3-pro-image-preview-2k-a-You-must-recreate-a-(7).png",
   //   ingredients: ["Damask Rose Extract", "Jojoba Oil"],
   //   usage: "يوضع على نقاط النبض"
   // },
   // {
   //   id: "fg_01",
-  //   name: "عطر خالد الدمشقي",
-  //   description: "عطر زيتي فاخر بخلاصة الورد الدمشقي الطبيعي.",
+  //   name: "تقسسيمات عطر اجمل احساس",
+  //   description: "عطر  فاخر بخلاصة الورد الدمشقي الطبيعي.",
   //   price: 950,
   //   originalPrice: 1100,
   //   category: "perfumes",
@@ -194,7 +194,7 @@ const products = [
   //   rating: 4.9,
   //   reviews: 88,
   //   inStock: true,
-  //   image: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=400&h=400&fit=crop",
+  //   image: "https://i.postimg.cc/L5GLKMbP/gemini-3-pro-image-preview-2k-a-You-must-recreate-a-(7).png",
   //   ingredients: ["Damask Rose Extract", "Jojoba Oil"],
   //   usage: "يوضع على نقاط النبض"
   // },
