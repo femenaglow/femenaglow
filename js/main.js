@@ -94,7 +94,7 @@ const products = [
   },
   {
     id: "fg_003",
-    name: "تقسيمات عطر راقي",
+    name: "تقسيمات عطر قصة",
     description: " طبقات عطرية متناسقة تأخذك من الانتعاش الأول إلى عمق الفخامة.",
     price: 1200,
     originalPrice: 70,
@@ -113,7 +113,7 @@ const products = [
   {
     id: "fg_005",
     name: "تقسيمات عطر شمس الامارات",
-    description: "عطر زيتي طبيعي برائحة الياسمين الفاخرة. ثابت وآمن على البشرة.",
+    description: "عطر  طبيعي برائحة الياسمين الفاخرة. ثابت وآمن على البشرة.",
     price: 70,
     originalPrice: null,
     category: "perfumes",
@@ -126,6 +126,23 @@ const products = [
     image: "https://i.postimg.cc/dt4tfks2/AQOi-Vz-Tx7YIfp-Sstz-KEzc-Wv3S-PBC500hrm-TW-IWy-Wmn-Bm-A-7Be8-g-Jm-YZe-Wk-D2iii-HG8Z-g-Hu7z-CP3Ra-WB.jpg",
     ingredients: ["Jasmine Extract", "Jojoba Oil", "Essential Oils"],
     usage: "عطر فاخر بسعر مناسب"
+  },
+  {
+    id: "fg_019",
+    name: "تقسيمات عطر  MON PARIS",
+    description: "عطر زيتي طبيعي برائحة الياسمين الفاخرة. ثابت وآمن على البشرة.",
+    price: 70,
+    originalPrice: null,
+    category: "perfumes",
+    subcategory: "oil-perfumes",
+    skinType: ["all"],
+    badge: null,
+    rating: 7.9,
+    reviews: 58,
+    inStock: true,
+    image: "https://i.postimg.cc/BZ73ZYpb/Whats-App-Image-2026-03-06-at-12-36-19-AM.jpg",
+    ingredients: ["Jasmine Extract", "Jojoba Oil", "Essential Oils"],
+    usage: "تقسيمات عطر فاخر بسعر مناسب"
   },
  
   {
