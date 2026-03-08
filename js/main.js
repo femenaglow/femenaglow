@@ -164,23 +164,23 @@ const products = [
     usage: "يستخدم صباحاً ومساءً"
   },
   
-  // {
-  //   id: "fg_011",
-  //   name: "",
-  //   description: ".",
-  //   price: 950,
-  //   originalPrice: 1100,
-  //   category: "perfumes",
-  //   subcategory: "oil-perfumes",
-  //   skinType: ["all"],
-  //   badge: "sale",
-  //   rating: 4.9,
-  //   reviews: 88,
-  //   inStock: true,
-  //   image: "https://i.postimg.cc/L5GLKMbP/gemini-3-pro-image-preview-2k-a-You-must-recreate-a-(7).png",
-  //   ingredients: ["Damask Rose Extract", "Jojoba Oil"],
-  //   usage: "يوضع على نقاط النبض"
-  // },
+  {
+    id: "fg_011",
+    name: "باك تجمبعة عطور ",
+    description: "مجموعة عطرية تجمع بين الفخامة والتنوع لترافقك في كل يوم.",
+    price: 950,
+    originalPrice: 1100,
+    category: "bundles",
+    subcategory: "oil-perfumes",
+    skinType: ["all"],
+    badge: "sale",
+    rating: 4.9,
+    reviews: 88,
+    inStock: true,
+    image: "https://i.postimg.cc/4xh6bw3X/Whats-App-3.jpg",
+    ingredients: ["Damask Rose Extract", "Jojoba Oil"],
+    usage: ""
+  },
    {
      id: "fg_01",
      name: "تقسسيمات عطر اجمل احساس",
