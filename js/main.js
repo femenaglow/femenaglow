@@ -235,8 +235,8 @@ const products = [
     id: "fg_015",
     name: "بوكس متكامل مخفض",
     description1: "باك متكامل للعناية بالبشرة يمنحك النظافة والترطيب والنعومة في روتين واحد.",
-    price: 40,
-    originalPrice: 500,
+    price: 600,
+    originalPrice: 700,
     category: "bundles",
     subcategory: "hair-sets",
     skinType: ["all"],
@@ -252,8 +252,8 @@ const products = [
     id: "fg_016",
     name: "بوكس مخفض جدا مناسب للجميع",
     description: "مجموعة مقشر متكاملة مخفض جدا   وبلسم طبيعي.",
-    price: 600,
-    originalPrice: 400,
+    price: 400,
+    originalPrice: 500,
     category: "bundles",
     subcategory: "hair-sets",
     skinType: ["all"],
@@ -271,11 +271,11 @@ const products = [
 
 // Categories Data
 const categories = [
-  { id: "skincare", name: "العناية بالبشرة", icon: "🧴", count: 45 },
+  { id: "skincare", name: "العناية بالبشرة", icon: "🧴", count: 6 },
 
-  { id: "perfumes", name: "العطور الطبيعية", icon: "🌸", count: 18 },
+  { id: "perfumes", name: "العطور الطبيعية", icon: "🌸", count: 5 },
   // { id: "serums", name: "السيرومات والزيوت", icon: "🧪", count: 28 },
-  { id: "bundles", name: "البوكسات الجاهزة", icon: "🎁", count: 12 }
+  { id: "bundles", name: "البوكسات الجاهزة", icon: "🎁", count: 4 }
 ];
 
 // ============================================
