@@ -202,7 +202,7 @@ const products = [
     id: "fg_011",
     name: "باك تجمبعة عطور ",
     description: "مجموعة عطرية تجمع بين الفخامة والتنوع لترافقك في كل يوم.",
-    price: 950,
+    price: 300,
     originalPrice: 1100,
     category: "bundles",
     subcategory: "oil-perfumes",
